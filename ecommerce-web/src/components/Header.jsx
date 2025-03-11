@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../assets/img/logo.png";
+import Logo from "../assets/img/logo/logo1.png";
 
 export default function Header() {
   // State to manage the visibility of the search input box
@@ -11,13 +11,13 @@ export default function Header() {
   };
 
   return (
-    <header className="main_menu home_menu">
+    <header className="main_menu home_menu headerbg">
       <div className="container">
         <div className="row align-items-center justify-content-center">
           <div className="col-lg-12">
             <nav className="navbar navbar-expand-lg navbar-light">
               <a className="navbar-brand" href="index.html">
-                <img src={Logo} alt="logo" />
+                <img src={Logo} alt="logo" width="100" />
               </a>
               <button
                 className="navbar-toggler"
@@ -70,7 +70,7 @@ export default function Header() {
                   </li>
                   
                   <li className="nav-item">
-                    <a className="nav-link" href="contact.html">
+                    <a className="nav-link" href="/contect">
                       Contact
                     </a>
                   </li>
@@ -81,7 +81,7 @@ export default function Header() {
                 <a id="search_1" href="javascript:void(0)" onClick={toggleSearch}>
                   <i className="ti-search" />
                 </a>
-                <a href="cart.html">
+                <a href="/cart">
                   <i className="flaticon-shopping-cart-black-shape" />
                 </a>
               </div>

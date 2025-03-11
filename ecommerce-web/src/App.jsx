@@ -11,6 +11,10 @@ import Home from "./page/Home/Home";
 import About from "./page/About/About";
 import Productlist from "./page/Productlist/Productlist";
 import Productdetails from "./page/Productdetails/Productdetails";
+import Contact from "./page/Contect";
+import Cart from "./page/Cart";
+import Checkout from "./page/Checkout";
+import Confirmation from "./page/confirmation";
 
 
 // Uncomment and import other pages when needed
@@ -29,6 +33,12 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/productlist" element={<Productlist />} />
         <Route path="/productdetails" element={<Productdetails />} />
+        <Route path="/contect" element={<Contact/>}/>
+        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/checkout" element={<Checkout/>}/>
+        <Route path="/confirmation" element={<Confirmation/>}/>
+        
+
       </Routes>
 
       {/* Footer Component */}
