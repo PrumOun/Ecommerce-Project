@@ -1,0 +1,12 @@
+# Node.js (React.js)
+ecommerce-web/node_modules/
+ecommerce-web/.next/
+
+# Laravel (API)
+ecommerce-api/vendor/
+ecommerce-api/.env
+
+# Android (Kotlin)
+ecommerce-app/.gradle/
+ecommerce-app/.idea/
+ecommerce-app/local.properties
