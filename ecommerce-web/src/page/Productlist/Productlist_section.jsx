@@ -127,6 +127,12 @@ export default function Productlist_section() {
                         </h3>
                         <p>From {product.price}</p>
 
+<<<<<<< HEAD
+=======
+                        {/* Size Buttons */}
+                        
+
+>>>>>>> a43662c1fb25e1824f74c98c40a4e60340f2f14d
                         {/* Shop Now Button */}
                         <div className="shop_now_button">
                           <button onClick={() => handleAddToCart(product)} className="btn_1">
