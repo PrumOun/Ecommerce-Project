@@ -89,12 +89,7 @@ export default function Productlist_section() {
                         <p>From {product.price}</p>
 
                         {/* Size Buttons */}
-                        <div className="size_buttons">
-                          <button className="btn_size">S</button>
-                          <button className="btn_size">M</button>
-                          <button className="btn_size">L</button>
-                          <button className="btn_size">XL</button>
-                        </div>
+                        
 
                         {/* Shop Now Button */}
                         <div className="shop_now_button">
