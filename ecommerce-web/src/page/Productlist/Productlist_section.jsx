@@ -89,7 +89,7 @@ export default function Productlist_section() {
                         <p>From {product.price}</p>
 
                         {/* Size Buttons */}
-                        
+                         
 
                         {/* Shop Now Button */}
                         <div className="shop_now_button">
