@@ -4,7 +4,7 @@ import Logo from "../assets/img/logo.png";
 export default function Footer() {
   return (
     <footer className="footer_part">
-  <div className="footer_iner">
+  <div className="footer_iner bg">
     <div className="container">
       <div className="row justify-content-between align-items-center">
         <div className="col-lg-8">
@@ -28,10 +28,10 @@ export default function Footer() {
       </div>
     </div>
   </div>
-  <div className="copyright_part">
-    <div className="container">
+  <div className=" copyright_part">
+    <div className="container ">
       <div className="row ">
-        <div className="col-lg-12">
+        <div className="col-lg-12 ">
           <div className="copyright_text">
             <p>{/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
               Copyright © All rights reserved | This template is made with <i className="ti-heart" aria-hidden="true" /> by <a href="https://colorlib.com" target="_blank">Colorlib</a>

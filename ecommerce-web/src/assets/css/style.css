@@ -794,7 +794,7 @@ ul {
 .single-blog .tag {
   text-align: left;
   display: inline-block;
-  float: left;
+  
   font-size: 13px;
   font-weight: 300;
   margin-right: 22px;
@@ -5777,7 +5777,7 @@ input:focus {
   height: 14px;
   z-index: 9;
   cursor: pointer;
-  -webkit-transition: all 0.25s linear;
+  
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   color: #2a2a2a;
@@ -8646,7 +8646,7 @@ h6 {
 
 /* line 69, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_footer.scss */
 .footer_part .copyright_part {
-  background-color: #F4EDF2;
+  background-color: #fff2f2;
   padding: 30px 0px;
 }
 

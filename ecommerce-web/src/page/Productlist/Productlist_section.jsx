@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // Import all product images for better React compatibility
 import img_product1 from "../../assets/img/product/product_list_1.png";
 import img_product2 from "../../assets/img/product/product_list_2.png";
@@ -13,24 +13,47 @@ import img_product10 from "../../assets/img/product/product_list_10.png";
 
 export default function Productlist_section() {
   // Define product data as an array of objects
-  const products = [
-    { id: 1, image: img_product1, name: "Cervical pillow for airplane car office nap pillow", price: "$5" },
-    { id: 2, image: img_product2, name: "Geometric striped flower home classy decor", price: "$5" },
-    { id: 3, image: img_product3, name: "Foam filling cotton slow rebound pillows", price: "$5" },
-    { id: 4, image: img_product4, name: "Memory foam filling cotton Slow rebound pillows", price: "$5" },
-    { id: 5, image: img_product5, name: "Memory foam filling cotton Slow rebound pillows", price: "$5" },
-    { id: 6, image: img_product6, name: "Sleeping orthopedic sciatica Back Hip Joint Pain relief", price: "$5" },
-    { id: 7, image: img_product7, name: "Memory foam filling cotton Slow rebound pillows", price: "$5" },
-    { id: 8, image: img_product8, name: "Sleeping orthopedic sciatica Back Hip Joint Pain relief", price: "$5" },
-    { id: 9, image: img_product9, name: "Geometric striped flower home classy decor", price: "$5" },
-    { id: 10, image: img_product10, name: "Geometric striped flower home classy decor", price: "$5" },
+  const allProducts = [
+    { id: 1, image: img_product1, name: "Cervical pillow", price: "$5", category: "Pillow" },
+    { id: 2, image: img_product2, name: "Geometric decor", price: "$5", category: "Decor" },
+    { id: 3, image: img_product3, name: "Foam pillows", price: "$5", category: "Pillow" },
+    { id: 4, image: img_product4, name: "Memory foam pillows", price: "$5", category: "Pillow" },
+    { id: 5, image: img_product5, name: "Memory foam pillows", price: "$5", category: "Pillow" },
+    { id: 6, image: img_product6, name: "Orthopedic relief", price: "$5", category: "Health" },
+    { id: 7, image: img_product7, name: "Memory foam pillows", price: "$5", category: "Pillow" },
+    { id: 8, image: img_product8, name: "Orthopedic relief", price: "$5", category: "Health" },
+    { id: 9, image: img_product9, name: "Geometric decor", price: "$5", category: "Decor" },
+    { id: 10, image: img_product10, name: "Geometric decor", price: "$5", category: "Decor" },
   ];
+
+  // State for managing dropdown visibility
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+  // State for tracking the selected category
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   // Function to handle "Add to Cart" action
   const handleAddToCart = (product) => {
     console.log("Added to cart:", product);
     // You can implement your cart logic here, such as updating state or dispatching an action.
   };
+
+  // Function to toggle dropdown visibility
+  const toggleDropdown = () => {
+    setIsDropdownVisible(!isDropdownVisible);
+  };
+
+  // Function to handle category selection
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    setIsDropdownVisible(false); // Close the dropdown after selection
+  };
+
+  // Filter products based on the selected category
+  const filteredProducts =
+    selectedCategory === "All"
+      ? allProducts
+      : allProducts.filter((product) => product.category === selectedCategory);
 
   return (
     <div>
@@ -63,13 +86,29 @@ export default function Productlist_section() {
                 </div>
                 <div className="single_sedebar">
                   <div className="select_option">
-                    <div className="select_option_list">Category <i className="right fas fa-caret-down" /></div>
-                    <div className="select_option_dropdown">
-                      <p><a href="#">Category 1</a></p>
-                      <p><a href="#">Category 2</a></p>
-                      <p><a href="#">Category 3</a></p>
-                      <p><a href="#">Category 4</a></p>
+                    <div
+                      className="select_option_list"
+                      onClick={toggleDropdown}
+                      style={{ cursor: "pointer" }}
+                    >
+                      {selectedCategory} <i className="right fas fa-caret-down" />
                     </div>
+                    {isDropdownVisible && (
+                      <div className="select_option_dropdown">
+                        <p onClick={() => handleCategorySelect("All")}>
+                          <a href="#">All</a>
+                        </p>
+                        <p onClick={() => handleCategorySelect("Pillow")}>
+                          <a href="#">Pillow</a>
+                        </p>
+                        <p onClick={() => handleCategorySelect("Decor")}>
+                          <a href="#">Decor</a>
+                        </p>
+                        <p onClick={() => handleCategorySelect("Health")}>
+                          <a href="#">Health</a>
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -79,7 +118,7 @@ export default function Productlist_section() {
             <div className="col-md-8">
               <div className="product_list">
                 <div className="row">
-                  {products.map((product) => (
+                  {filteredProducts.map((product) => (
                     <div key={product.id} className="col-lg-6 col-sm-6">
                       <div className="single_product_item">
                         <img src={product.image} alt={product.name} className="img-fluid" />
@@ -87,9 +126,6 @@ export default function Productlist_section() {
                           <a href="single-product.html">{product.name}</a>
                         </h3>
                         <p>From {product.price}</p>
-
-                        {/* Size Buttons */}
-                         
 
                         {/* Shop Now Button */}
                         <div className="shop_now_button">
