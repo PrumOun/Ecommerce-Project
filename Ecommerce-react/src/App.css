@@ -1,0 +1,29 @@
+.size_buttons {
+    margin-bottom: 10px;
+  }
+  
+  .btn_size {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .btn_size:hover {
+    background-color: #ddd;
+  }
+  
+  .shop_now_button .btn_1 {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .shop_now_button .btn_1:hover {
+    background-color: #0056b3;
+  }
