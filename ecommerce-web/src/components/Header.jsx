@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import Logo from "../assets/img/logo/logo1.png";
-
 export default function Header() {
   // State to manage the visibility of the search input box
   const [isSearchVisible, setIsSearchVisible] = useState(false);
-
   // Function to toggle the search input box
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
   };
-
   return (
     <header className="main_menu home_menu headerbg">
       <div className="container">
@@ -72,6 +69,11 @@ export default function Header() {
                   <li className="nav-item">
                     <a className="nav-link" href="/contect">
                       Contact
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/login">
+                      Login
                     </a>
                   </li>
                 </ul>

@@ -15,6 +15,7 @@ import Contact from "./page/Contect";
 import Cart from "./page/Cart";
 import Checkout from "./page/Checkout";
 import Confirmation from "./page/confirmation";
+import Login from "./page/Login";
 
 
 // Uncomment and import other pages when needed
@@ -37,6 +38,8 @@ function App() {
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/confirmation" element={<Confirmation/>}/>
+        <Route path="/login" element={<Login/>}/>
+
         
 
       </Routes>
